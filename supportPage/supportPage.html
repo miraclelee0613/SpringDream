@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="/css/support.css">
+<link rel="stylesheet" href="/css/bulma.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- header/footer load를 위한 스크립트 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#header").load("../headerfooter/header.html")
+        $("#footer").load("../headerfooter/footer.html")
+
+        /* header로드
+        id 지정을 통해서도 가능합니다. 
+         $("#header").load("header.html #navbar")
+         */
+    });
+</script>
+
+<body>
+    <header id="header">헤더</header>
+    <main>
+        <!-- 헤더와의 간격 유지 -->
+        <div class="container-divider"></div>
+
+        <div class="container">
+            <nav class="sub-nav">
+                <ol class="breadcrumbs">
+
+                    <li title="고객센터">
+                        <a href="supportPage.html">고객센터</a>
+                    </li>
+                    <li title="문의 등록">
+                        문의 등록
+                    </li>
+                </ol>
+                <form role="search" class="search" data-search="" action="/hc/ko/search" accept-charset="UTF-8"
+                    method="get"><input name="utf8" type="hidden" value="✓" autocomplete="off"><input type="search"
+                        name="query" id="query" placeholder="검색" aria-label="검색"></form>
+            </nav>
+            <h1>
+                <div class="page-title">문의 등록</div>
+            </h1>
+            <form id="new_request" class="request-form" data-form="" data-form-type="request" action="/hc/ko/requests"
+                accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"
+                    autocomplete="off"><input type="hidden" name="authenticity_token"
+                    value="hc:requests:client:yfyvMUpifRrFIgS8qu2P7uPEag38CAkMT1plV_tYBgQfEZyM3EjnHIeoq-vs4Kt7H0ec804SgzJV_mlSbc_VhQ"
+                    data-hc-status="ready">
+
+
+
+
+
+
+
+
+                <div class="form-field string required request_anonymous_requester_email"><label
+                        for="request_anonymous_requester_email">이메일 주소</label>
+                    <input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email"
+                        aria-required="true">
+                </div>
+
+
+
+
+                <div class="form-field string  required">
+                    <label id="" for="">상담유형</label>
+                    <div class="is-block">
+                        <input type="checkbox" name="" id="" class="">고객의소리
+                    </div>
+                    <div class="is-block">
+                        <input type="checkbox" name="" id="" class="">
+                    </div>
+                </div>
+
+
+
+                <div class="form-field string  required  request_subject">
+                    <label id="request_subject_label" for="request_subject">제목</label>
+                    <input type="text" name="request[subject]" id="request_subject" maxlength="150" size="150"
+                        aria-required="true" aria-labelledby="request_subject_label">
+
+
+                </div>
+
+
+                <div class="suggestion-list" data-hc-class="searchbox" data-hc-suggestion-list="true"></div>
+
+
+                <div class="form-field text  required  request_description">
+                    <label id="request_description_label" for="request_description">설명</label>
+                    <textarea name="request[description]" id="request_description" aria-required="true"
+                        aria-describedby="request_description_hint"
+                        aria-labelledby="request_description_label"></textarea><input type="hidden"
+                        name="request[description_mimetype]" id="request_description_mimetype" value="text/plain"
+                        style="display: none;" autocomplete="off">
+
+                    <p id="request_description_hint">요청에 관한 세부 정보를 입력하세요. 저희 지원 스태프가 가능한 한 빨리 자세한 답변을 드리도록 하겠습니다.</p>
+                </div>
+                <div class="container-divider"></div>
+                <div class="form-field">
+                    <label for="request-attachments" class="is-block">
+                        첨부 파일
+                    </label>
+                    <div style="height: 10px;"></div>
+                    <div id="upload-dropzone" class="upload-dropzone">
+                        <input type="file" class="" multiple="true" id="request-attachments" data-fileupload="true"
+                            aria-describedby="upload-error">
+                        <span class="container p-2 is-hidden" style="outline: auto;">
+                            <a>파일 추가</a> 또는 파일을 여기로 드래그
+                        </span>
+                    </div>
+                    <div style="height: 10px;"></div>
+                    <div id="upload-error" class="notification notification-error notification-inline"
+                        style="display: none;">
+                        <span data-upload-error-message=""></span>
+                    </div>
+
+
+                    <ul id="request-attachments-pool" class="upload-pool" data-template="upload-template"></ul>
+
+                    <script type="text/html" id="upload-template">
+                        <li class="upload-item" data-upload-item>
+                            <a class="upload-link" target="_blank" data-upload-link></a>
+                            <p class="upload-path" data-upload-path></p>
+                            <p class="upload-path" data-upload-size></p>
+                            <p data-upload-issue class="notification notification-alert notification-inline" aria-hidden="true"></p>
+                            <span class="upload-remove" data-upload-remove></span>
+                            <div class="upload-progress" data-upload-progress></div>
+                            <input type="hidden">
+                        </li>
+                    </script>
+                </div>
+
+                <footer><input type="submit" name="commit" value="제출"></footer>
+
+            </form>
+        </div>
+    </main>
+    <div class="container-divider mt-3"></div>
+    <footer id="footer"></footer>
+</body>
+
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#header").load("../headerfooter/header.html")
+        /* id 지정을 통해서도 가능합니다. 
+         $("#header").load("header.html #navbar")
+         */
+    });
+</script>
