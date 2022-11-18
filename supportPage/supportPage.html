@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/css/support.css">
 <link rel="stylesheet" href="/css/bulma.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <!-- header/footer load를 위한 스크립트 -->
 <script type="text/javascript">
     $(document).ready(function () {
@@ -30,7 +30,7 @@ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="ano
         <!-- 헤더와의 간격 유지 -->
         <div class="container-divider"></div>
 
-        <div class="container">
+        <div class="container" style="max-width: 700px;">
             <nav class="sub-nav">
                 <ol class="breadcrumbs">
 
@@ -48,18 +48,9 @@ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="ano
             <h1>
                 <div class="page-title">문의 등록</div>
             </h1>
-            <form id="new_request" class="request-form" data-form="" data-form-type="request" action="/hc/ko/requests"
+            <form id="new_request" class="request-form" data-form="" data-form-type="request" action=""
                 accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"
-                    autocomplete="off"><input type="hidden" name="authenticity_token"
-                    value="hc:requests:client:yfyvMUpifRrFIgS8qu2P7uPEag38CAkMT1plV_tYBgQfEZyM3EjnHIeoq-vs4Kt7H0ec804SgzJV_mlSbc_VhQ"
-                    data-hc-status="ready">
-
-
-
-
-
-
-
+                    autocomplete="off"><input type="hidden" name="authenticity_token" value="" data-hc-status="ready">
 
                 <div class="form-field string required request_anonymous_requester_email"><label
                         for="request_anonymous_requester_email">이메일 주소</label>
@@ -67,10 +58,7 @@ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="ano
                         aria-required="true">
                 </div>
 
-
-
-
-                <div class="form-field string  required">
+                <div class="form-field required">
                     <label id="" for="">상담유형</label>
                     <div class="is-block">
                         <input type="checkbox" name="" id="" class="">고객의소리
@@ -149,11 +137,3 @@ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="ano
 </body>
 
 </html>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#header").load("../headerfooter/header.html")
-        /* id 지정을 통해서도 가능합니다. 
-         $("#header").load("header.html #navbar")
-         */
-    });
-</script>
